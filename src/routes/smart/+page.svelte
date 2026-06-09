@@ -23,19 +23,6 @@
     { id: 'apply', name: '교육 신청' }
   ];
 
-  // Contact Modal state
-  let modalOpen = $state(false);
-  let formSubmitted = $state(false);
-  let formData = $state({
-    groupName: '',
-    contactName: '',
-    phone: '',
-    email: '',
-    date: '',
-    headcount: '',
-    message: ''
-  });
-
   onMount(() => {
     // Background slide rotation
     const slideInterval = setInterval(() => {
@@ -83,35 +70,6 @@
         behavior: 'smooth'
       });
     }
-  }
-
-  function openModal() {
-    modalOpen = true;
-    formSubmitted = false;
-    // reset form
-    formData = {
-      groupName: '',
-      contactName: '',
-      phone: '',
-      email: '',
-      date: '',
-      headcount: '',
-      message: ''
-    };
-  }
-
-  function closeModal() {
-    modalOpen = false;
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    // In a real application, this would send formData to a backend server.
-    console.log('Submitted Inquiry Data:', formData);
-    formSubmitted = true;
-    setTimeout(() => {
-      closeModal();
-    }, 2500);
   }
 </script>
 
@@ -330,89 +288,21 @@
 
     <!-- CTA Trigger Button -->
     <div class="cta-button-container text-center">
-      <button class="cta-apply-btn" onclick={openModal} id="open-apply-modal-btn">
+      <a class="cta-apply-btn" href="/contact" id="open-apply-modal-btn">
         <span>교육신청하기</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cta-arrow">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
-      </button>
+      </a>
     </div>
 
   </div>
 </section>
 
 <!-- Interactive Modal for Education Inquiry -->
-{#if modalOpen}
-  <div class="modal-backdrop" onclick={closeModal}></div>
-  <div class="modal-wrapper animate-zoom-in" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <h2 id="modal-title" class="modal-header-title">스마트 심폐소생술 교육 신청 문의</h2>
-      <button class="modal-close-btn" onclick={closeModal} aria-label="Close modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-    
-    <div class="modal-body">
-      {#if formSubmitted}
-        <div class="success-message text-center">
-          <div class="success-icon-box">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="success-icon">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <h3>신청 접수 완료</h3>
-          <p>교육 신청 문의가 성공적으로 접수되었습니다.<br/>담당자가 신속하게 검토한 후 입력해주신 연락처로 연락드리겠습니다.</p>
-        </div>
-      {:else}
-        <form onsubmit={handleSubmit} class="inquiry-form">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="groupName" class="form-label">기관 / 단체명 <span class="required">*</span></label>
-              <input type="text" id="groupName" class="form-input" placeholder="예: (주)마인드컴퍼니" bind:value={formData.groupName} required />
-            </div>
-            
-            <div class="form-group">
-              <label for="contactName" class="form-label">담당자명 <span class="required">*</span></label>
-              <input type="text" id="contactName" class="form-input" placeholder="예: 홍길동" bind:value={formData.contactName} required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="form-label">연락처 <span class="required">*</span></label>
-              <input type="tel" id="phone" class="form-input" placeholder="예: 010-1234-5678" bind:value={formData.phone} required />
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="form-label">이메일 주소 <span class="required">*</span></label>
-              <input type="email" id="email" class="form-input" placeholder="예: contact@domain.com" bind:value={formData.email} required />
-            </div>
-
-            <div class="form-group">
-              <label for="date" class="form-label">희망 교육 일정</label>
-              <input type="date" id="date" class="form-input" bind:value={formData.date} />
-            </div>
-
-            <div class="form-group">
-              <label for="headcount" class="form-label">예상 교육 인원 (명)</label>
-              <input type="number" id="headcount" class="form-input" placeholder="예: 30" min="1" bind:value={formData.headcount} />
-            </div>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="message" class="form-label">추가 문의사항</label>
-            <textarea id="message" class="form-textarea" rows="4" placeholder="교육 장소, 특별 희망사항이나 추가 요청 사항 등을 자유롭게 적어주세요." bind:value={formData.message}></textarea>
-          </div>
-
-          <div class="form-actions text-center">
-            <button type="button" class="form-btn cancel-btn" onclick={closeModal}>취소</button>
-            <button type="submit" class="form-btn submit-btn">문의하기</button>
-          </div>
-        </form>
-      {/if}
-    </div>
-  </div>
+{#if false}
+  <div></div>
 {/if}
 
 <Certifications />
