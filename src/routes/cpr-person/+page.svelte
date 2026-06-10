@@ -76,42 +76,58 @@
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
 
-    // Daum rough map Lander rendering
-    const initMap = () => {
-      window.daum = window.daum || {};
-      window.daum.roughmap = window.daum.roughmap || {
-        phase: "prod",
-        cdn: "207038f2_1774248312945",
-        URL_KEY_DATA_LOAD_PRE: "https://t1.kakaocdn.net/roughmap/",
-        url_protocal: "https:",
-        url_cdn_domain: "//t1.kakaocdn.net"
-      };
-
-      const loadLander = () => {
-        const mapContainer = document.getElementById('daumRoughmapContainer1692606111618');
-        if (mapContainer && window.daum.roughmap.Lander) {
+    // Naver Map Open API rendering
+    const initNaverMap = () => {
+      const loadMap = () => {
+        const mapContainer = document.getElementById('naverMapContainer');
+        if (mapContainer && window.naver && window.naver.maps) {
           mapContainer.innerHTML = '';
-          new window.daum.roughmap.Lander({
-            "timestamp" : "1692606111618",
-            "key" : "2fwhm",
-            "mapWidth" : "100%",
-            "mapHeight" : "360"
-          }).render();
+          const position = new window.naver.maps.LatLng(37.547623, 126.9173947);
+          const mapOptions = {
+            center: position,
+            zoom: 16,
+            zoomControl: true,
+            zoomControlOptions: {
+              position: window.naver.maps.Position.TOP_RIGHT
+            }
+          };
+          const map = new window.naver.maps.Map(mapContainer, mapOptions);
+
+          const marker = new window.naver.maps.Marker({
+            position: position,
+            map: map,
+            title: "마인드앤매뉴얼 트레이닝 센터(합정)"
+          });
+
+          const infowindow = new window.naver.maps.InfoWindow({
+            content: `
+              <div style="padding: 10px; min-width: 180px; font-family: sans-serif; font-size: 12px; line-height: 1.5; color: #333;">
+                <h4 style="margin: 0 0 5px 0; font-size: 13px; font-weight: 700; color: #ff7900;">마인드앤매뉴얼</h4>
+                <p style="margin: 0;">서울시 마포구 독막로6길 8, 2층</p>
+              </div>
+            `,
+            borderWidth: 1,
+            borderColor: "#dddddd",
+            anchorSize: new window.naver.maps.Size(10, 10),
+            anchorSkew: true,
+            anchorColor: "#ffffff"
+          });
+
+          infowindow.open(map, marker);
         }
       };
 
-      if (window.daum.roughmap.Lander) {
-        loadLander();
+      if (window.naver && window.naver.maps) {
+        loadMap();
       } else {
         const script = document.createElement('script');
-        script.src = 'https://t1.kakaocdn.net/kakaomapweb/roughmap/place/prod/207038f2_1774248312945/roughmapLander.js';
-        script.charset = 'UTF-8';
-        script.onload = loadLander;
+        script.src = 'https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=axrgdrlsoj';
+        script.onload = loadMap;
         document.head.appendChild(script);
       }
     };
 
-    initMap();
+    initNaverMap();
 
     return () => {
       clearInterval(slideInterval);
@@ -536,13 +552,13 @@
     <div class="center-grid animate-slide-up">
       <!-- Left side: Map and Address -->
       <div class="map-wrapper">
-        <div id="daumRoughmapContainer1692606111618" class="map-container"></div>
+        <div id="naverMapContainer" class="map-container"></div>
         <div class="address-bar-card">
           <div class="address-text">
             <strong>마인드앤매뉴얼 트레이닝 센터(합정)</strong>
             <p>서울시 독막로6길 8, 2층</p>
           </div>
-          <a class="route-btn" href="http://kko.to/kIkgj-7aS4" target="_blank" rel="noopener noreferrer">
+          <a class="route-btn" href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EB%8F%85%EB%A7%89%EB%A1%9C6%EA%B8%B8%208" target="_blank" rel="noopener noreferrer">
             <span>길 찾기</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
