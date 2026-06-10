@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
   import Certifications from '$lib/components/Certifications.svelte';
 
   // Carousel slider state
@@ -78,7 +75,7 @@
   <meta name="description" content="마인드앤매뉴얼의 시그니처 스마트 심폐소생술 교육 과정. IoT 교구재와 프로그램, 실시간 피드백 시스템을 통해 정확한 가슴압박과 실습 방식을 교육합니다." />
 </svelte:head>
 
-<Header />
+
 
 <!-- Page Hero Section with Image Carousel Background -->
 <section class="smart-hero">
@@ -306,8 +303,7 @@
 {/if}
 
 <Certifications />
-<Footer />
-<FloatingActions />
+
 
 <style>
   /* Base margins / scroll alignment */

@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
   import Certifications from '$lib/components/Certifications.svelte';
 
   let stickyMenu = $state(false);
@@ -107,7 +104,7 @@
   <meta name="description" content="마인드앤매뉴얼의 파트너스 및 비즈니스 비전, 주요 프로젝트와 협업 소식을 안내합니다." />
 </svelte:head>
 
-<Header />
+
 
 <!-- Page Hero Banner -->
 <section class="partner-hero-banner">
@@ -224,8 +221,7 @@
 </section>
 
 <Certifications />
-<Footer />
-<FloatingActions />
+
 
 <style>
   /* Base layouts / anchor settings */

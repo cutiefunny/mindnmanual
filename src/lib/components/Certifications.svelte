@@ -1,4 +1,6 @@
 <script>
+  let { id = undefined } = $props();
+
   const certs = [
     {
       img: 'https://cdn.imweb.me/upload/S20230801dc74a8f9b2b46/72cc169227f59.png',
@@ -18,7 +20,7 @@
   ];
 </script>
 
-<section class="certifications-section animate-slide-up">
+<section {id} class="certifications-section animate-slide-up">
   <div class="container certs-container">
     <div class="certs-intro">
       <p class="intro-tag">Accredited Institution</p>

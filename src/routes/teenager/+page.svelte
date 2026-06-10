@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
   import Certifications from '$lib/components/Certifications.svelte';
 
   // Hero Carousel slider state
@@ -102,7 +99,7 @@
   <meta name="description" content="학교보건법 기준에 의거한 초/중/고 학생 대상 심폐소생술 교육과정. 강당 및 교실 단위 단체 실습으로 정확한 가슴압박과 자동심장충격기 사용법을 출강 교육합니다." />
 </svelte:head>
 
-<Header />
+
 
 <!-- Page Hero Section -->
 <section class="hero-section">
@@ -346,8 +343,7 @@
 </section>
 
 <Certifications />
-<Footer />
-<FloatingActions />
+
 
 <style>
   /* Hero Section */

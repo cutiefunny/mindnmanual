@@ -1,7 +1,4 @@
 <script>
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
   import Certifications from '$lib/components/Certifications.svelte';
 
   // Form states
@@ -81,7 +78,7 @@
   <meta name="description" content="마인드앤매뉴얼의 전문 교육 과정 신청 및 문의 페이지. 필요하신 교육 정보를 입력하시면 신속하게 상담 및 일정을 조율해 드립니다." />
 </svelte:head>
 
-<Header />
+
 
 <div class="contact-page-container">
   <div class="container main-layout">
@@ -188,9 +185,9 @@
                 <option value="070">070</option>
               </select>
               <span class="dash">-</span>
-              <input type="text" class="form-input text-center" max-length="4" placeholder="0000" bind:value={phone2} required pattern="[0-9]{3,4}" />
+              <input type="text" class="form-input text-center" maxlength="4" placeholder="0000" bind:value={phone2} required pattern="[0-9]{3,4}" />
               <span class="dash">-</span>
-              <input type="text" class="form-input text-center" max-length="4" placeholder="0000" bind:value={phone3} required pattern="[0-9]{4}" />
+              <input type="text" class="form-input text-center" maxlength="4" placeholder="0000" bind:value={phone3} required pattern="[0-9]{4}" />
             </div>
           </div>
 
@@ -274,8 +271,7 @@
 {/if}
 
 <Certifications />
-<Footer />
-<FloatingActions />
+
 
 <style>
   .contact-page-container {

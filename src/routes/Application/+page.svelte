@@ -1,7 +1,4 @@
 <script>
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
 
   const generalCourses = [
     {
@@ -51,7 +48,7 @@
   <meta name="description" content="마인드앤매뉴얼의 전문 교육 신청 페이지. 스마트 심폐소생술 교육, 일반인 심폐소생술 교육, 교직원·청소년 응급처치 교육, 어린이 안전교육 등 다양한 교육을 신청하세요." />
 </svelte:head>
 
-<Header />
+
 
 <div class="page-container">
   <!-- Section 1: 일반 교육과정 -->
@@ -119,8 +116,7 @@
   </section>
 </div>
 
-<Footer />
-<FloatingActions />
+
 
 <style>
   .page-container {

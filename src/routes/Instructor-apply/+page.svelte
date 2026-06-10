@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
 
   let stickyMenu = $state(false);
   let activeSection = $state('qualifications');
@@ -58,7 +55,7 @@
   <meta name="description" content="마인드앤매뉴얼의 응급처치 강사 상시 모집 안내. 대상 및 자격, 주요 혜택 및 강사 양성과정 정보를 안내합니다." />
 </svelte:head>
 
-<Header />
+
 
 <!-- Page Hero Banner -->
 <section class="apply-hero-banner">
@@ -274,8 +271,7 @@
   </div>
 </section>
 
-<Footer />
-<FloatingActions />
+
 
 <style>
   /* Base settings */

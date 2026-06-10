@@ -31,20 +31,32 @@
   let currentSlide = $state(0);
   let intervalId;
 
+  function autoPlayNextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+  }
+
+  function resetAutoplay() {
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(autoPlayNextSlide, 5000);
+  }
+
   function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
+    resetAutoplay();
   }
 
   function prevSlide() {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    resetAutoplay();
   }
 
   function goToSlide(index) {
     currentSlide = index;
+    resetAutoplay();
   }
 
   onMount(() => {
-    intervalId = setInterval(nextSlide, 5000);
+    intervalId = setInterval(autoPlayNextSlide, 5000);
   });
 
   onDestroy(() => {

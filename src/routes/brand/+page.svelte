@@ -1,8 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import Header from '$lib/components/Header.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-  import FloatingActions from '$lib/components/FloatingActions.svelte';
   import Certifications from '$lib/components/Certifications.svelte';
 
   let stickyMenu = $state(false);
@@ -63,7 +60,7 @@
   <meta name="description" content="마인드앤매뉴얼의 브랜드 비전, CI 및 응급처치 교육 서비스의 특징과 공인 인증 현황을 소개합니다." />
 </svelte:head>
 
-<Header />
+
 
 <!-- Page Banner -->
 <section class="brand-hero-banner">
@@ -243,18 +240,7 @@
 </section>
 
 <!-- Section 4: Certifications -->
-<section id="certifications" class="brand-section py-section">
-  <div class="container section-container">
-    <div class="section-header text-center">
-      <span class="section-tag">Accreditations</span>
-      <h2 class="section-title">인증현황</h2>
-    </div>
-    <Certifications />
-  </div>
-</section>
-
-<Footer />
-<FloatingActions />
+<Certifications id="certifications" />
 
 <style>
   /* Base margins / scroll alignment */
