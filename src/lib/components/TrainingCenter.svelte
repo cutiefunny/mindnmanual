@@ -72,44 +72,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Busan Center (Coming Soon) -->
-      <div class="center-card animate-slide-up" style="animation-delay: 0.2s">
-        <div class="center-image-wrapper">
-          <img src="https://cdn.imweb.me/thumbnail/20230814/ef2af6cfc1a7e.png" alt="부산 교육 센터 예정지" class="center-img active" />
-          <div class="coming-soon-overlay">
-            <div class="coming-soon-text">
-              <h3>COMING SOON</h3>
-              <p>부산 지역에서도 곧 마인드앤매뉴얼을 만나보실 수 있습니다.</p>
-            </div>
-          </div>
-          <div class="center-tag status-pending">준비 중</div>
-        </div>
-        <div class="center-details">
-          <div class="center-title-row">
-            <span class="center-location-badge badge-pending">부산 지사</span>
-            <h3 class="center-title">마인드앤매뉴얼 부산 교육관</h3>
-          </div>
-          <p class="center-desc">
-            부울경 지역의 수강생분들에게 편리하고 신속한 교육을 전달해 드리고자 영남권 교육관 오픈을 준비하고 있습니다. 더 가까이서 뵙도록 하겠습니다.
-          </p>
-          <div class="center-info-list">
-            <div class="info-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="info-icon">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>부산광역시 주요 거점 오픈 예정</span>
-            </div>
-            <div class="info-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="info-icon">
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-              </svg>
-              <span>고객상담 대표번호 1660-3707</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -148,8 +110,9 @@
 
   .centers-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
   .center-card {

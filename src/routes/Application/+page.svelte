@@ -18,6 +18,12 @@
       title: '대한심폐소생협회 일반인 심폐소생술 교육 (개인)',
       desc: '개인 신청자를 대상으로 일정에 맞춰 정기적으로 개설되는 대한심폐소생협회(KACPR) 공인 교육 과정입니다.',
       href: '/cpr-person'
+    },
+    {
+      img: 'https://img.youtube.com/vi/q7J2T6MFA9g/maxresdefault.jpg',
+      title: '온라인 심폐소생술 및 응급처치 교육',
+      desc: '시간과 공간의 제약 없이 언제 어디서나 동영상을 통해 쉽고 체계적으로 배울 수 있는 온라인 기초 교육 프로그램입니다.',
+      href: '/online'
     }
   ];
 

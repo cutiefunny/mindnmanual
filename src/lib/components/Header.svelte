@@ -17,7 +17,8 @@
         { name: '대한심폐소생협회 일반인 심폐소생술 교육(개인)', href: '/cpr-person' },
         { name: '교직원 응급처치 교육', href: '/teaching-staff' },
         { name: '청소년 심폐소생술 교육', href: '/teenager' },
-        { name: '어린이 안전교육', href: '/child' }
+        { name: '어린이 안전교육', href: '/child' },
+        { name: '온라인 교육', href: '/online' }
       ]
     },
     { name: '강사 지원', href: '/Instructor-apply' },
